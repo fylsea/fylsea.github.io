@@ -1,45 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>&lt;NowCoder&gt;Number</title>
-      <link href="/2019/07/28/%5BNowCoder%5DNumber/"/>
-      <url>/2019/07/28/%5BNowCoder%5DNumber/</url>
-      
-        <content type="html"><![CDATA[<blockquote><p><strong>题目描述</strong></p><p>链接：<a href="https://ac.nowcoder.com/acm/contest/884/K" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/884/K</a></p><p>One day he got a string consisted of numbers. He wants to know how many substrings in the string are multiples of 300 when considered as decimal integers. </p><p><strong>Note that leading and trailing zeros are allowed (both in original string and substrings you chose)</strong> and the same substring appearing in different places can be counted multiple times. </p><a id="more"></a><p><strong>输入描述：</strong></p><p>A single line consisting a string consisted of characters ‘0’ to ‘9’.</p><p><strong>输出描述：</strong></p><p>The number of substrings that are multiples of 300 when considered as decimal integers.</p><p><strong>样例：</strong></p><blockquote><p>输入：</p></blockquote><p>600</p><blockquote><p>输出：</p></blockquote><p>4</p><blockquote><p>说明：</p></blockquote><p>‘600’, ‘0’, ‘0’, ‘00’ are multiples of 300. (Note that ‘0’ are counted twice because it appeared two times)</p><p><strong>备注：</strong></p><p>let the string in the input be s, 1≤∣s∣≤10^5 .</p></blockquote><p><strong>问题分析：</strong></p><p>因为n^2复杂度在10^5条件下肯定会T，所以排除朴素的求前缀和。</p><p>想到二分去做，但是因为要保证子串的有序性，也不可以。</p><p><em>Solve A： O(n)复杂度</em></p><p>这里想到正序和逆序，人工筛选的办法肯定是从后向前筛选，例如333300会先筛选0、0、00、300、3300，33300，333300，在保证00的条件下3333筛了四遍，推广到前缀和的N^2复杂度是肯定不可行的，所以考虑正序——保存前 i 个数正确顺序的条件下，在求第 i + 1 项时直接引用第 i 项的数。</p><p><strong>w[i]为前 i 项的和 mod 3的值，对于长度 &gt;=2 的区间 [l,r] 内 只要 w[ l - 1 ] = w[ r ] 且 w [ r - 1 ] , w [ r ]为 0 即满足</strong></p><p>也就是说，当 s [i] = 0 时，ans+1，当 s [ i - 1 ] == s [ i ]时，ans+= （ i 之前有多少能满足的条件数目）其中 cn [x] 数组代表出现了多少次 mod3 = x的情况，即 i 时刻 cn [ 0 ] 为 i 之前有多少 <em>组</em>  满足能被300整除的组合数。</p><p>你可能会问，为什么不直接写 ans += cn[0]？ 形如78900 w[i]为22222，也就是说不满足前面一串能形成300的倍数的条件时这一串是不被二次计算的。 </p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxx 100005</span></span><br><span class="line"><span class="keyword">char</span> s[maxx]; <span class="keyword">int</span> n,w[maxx],cn[<span class="number">3</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%s"</span>,s+<span class="number">1</span>); n=<span class="built_in">strlen</span>(s+<span class="number">1</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">w[i]=(w[i<span class="number">-1</span>]+s[i])%<span class="number">3</span>;</span><br><span class="line">    </span><br><span class="line">ll ans=<span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span>(s[i]==<span class="string">'0'</span>)</span><br><span class="line">&#123;</span><br><span class="line">++ans;</span><br><span class="line"><span class="keyword">if</span>(s[i<span class="number">-1</span>]==<span class="string">'0'</span>)</span><br><span class="line">ans+=cn[w[i]];</span><br><span class="line">&#125;</span><br><span class="line">cn[w[i<span class="number">-1</span>]]++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><em>Solve B：前缀和+剪枝</em></p><p><em>Solve C：动态规划</em></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> “前缀和” </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>开博点题</title>
-      <link href="/2019/07/26/%E5%BC%80%E5%8D%9A%E7%82%B9%E9%A2%98/"/>
-      <url>/2019/07/26/%E5%BC%80%E5%8D%9A%E7%82%B9%E9%A2%98/</url>
-      
-        <content type="html"><![CDATA[<p><img src="http://images.cnblogs.com/cnblogs_com/Fylsea/1335321/o_241ac0d9776b0b35a16add96800635c8.jpg" alt="FylSeA"></p><blockquote><p>时间是一切财富中最宝贵的财富。 —— 德奥弗拉斯多</p></blockquote><p>这只是一篇单纯的记录开博的文章，如果你点进来，可能会因为里面并没有写什么而感到失望</p><a id="more"></a><p>开博时间是2019.7.26，第一篇博文的发表是在2019.7.27，历史上的今天例如在公元1214年的今天发生了布汶战役，1789年的今天美国成立了国务院，1837年的今天意大利诗人卡尔杜齐出生，1890年的今天梵高开枪自杀等等。</p><p>但是今天，我的博客创立了。</p><p>虽然对整个世界来说这不是很大的事情，但是我希望几万年之后外星人发现了这一篇博文并且特意将这件事记录在小本本上供后世参考和学习。</p><p>言归正传，我还是要拿这一博客当正经的Code与经验交流来用，如有不当之处欢迎大家指正。</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 闲谈 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-  
-  
+<search>
+  <entry>
+    <title><![CDATA[Number]]></title>
+    <url>%2F2019%2F07%2F28%2FNowCoder.Number%2F</url>
+    <content type="text"><![CDATA[题目描述 链接：https://ac.nowcoder.com/acm/contest/884/K One day he got a string consisted of numbers. He wants to know how many substrings in the string are multiples of 300 when considered as decimal integers. Note that leading and trailing zeros are allowed (both in original string and substrings you chose) and the same substring appearing in different places can be counted multiple times. 输入描述： A single line consisting a string consisted of characters ‘0’ to ‘9’. 输出描述： The number of substrings that are multiples of 300 when considered as decimal integers. 样例： 输入： 600 输出： 4 说明： ‘600’, ‘0’, ‘0’, ‘00’ are multiples of 300. (Note that ‘0’ are counted twice because it appeared two times) 备注： let the string in the input be s, 1≤∣s∣≤10^5 . 问题分析： 因为n^2复杂度在10^5条件下肯定会T，所以排除朴素的求前缀和。 想到二分去做，但是因为要保证子串的有序性，也不可以。 Solve A： O(n)复杂度 这里想到正序和逆序，人工筛选的办法肯定是从后向前筛选，例如333300会先筛选0、0、00、300、3300，33300，333300，在保证00的条件下3333筛了四遍，推广到前缀和的N^2复杂度是肯定不可行的，所以考虑正序——保存前 i 个数正确顺序的条件下，在求第 i + 1 项时直接引用第 i 项的数。 w[i]为前 i 项的和 mod 3的值，对于长度 &gt;=2 的区间 [l,r] 内 只要 w[ l - 1 ] = w[ r ] 且 w [ r - 1 ] , w [ r ]为 0 即满足 也就是说，当 s [i] = 0 时，ans+1，当 s [ i - 1 ] == s [ i ]时，ans+= （ i 之前有多少能满足的条件数目）其中 cn [x] 数组代表出现了多少次 mod3 = x的情况，即 i 时刻 cn [ 0 ] 为 i 之前有多少 组 满足能被300整除的组合数。 你可能会问，为什么不直接写 ans += cn[0]？ 形如78900 w[i]为22222，也就是说不满足前面一串能形成300的倍数的条件时这一串是不被二次计算的。 1234567891011121314151617181920212223242526#include &lt;bits/stdc++.h&gt;using namespace std;typedef long long ll;#define maxx 100005char s[maxx]; int n,w[maxx],cn[3];int main()&#123; scanf("%s",s+1); n=strlen(s+1); for(int i=1;i&lt;=n;++i) w[i]=(w[i-1]+s[i])%3; ll ans=0; for(int i=1;i&lt;=n;++i) &#123; if(s[i]=='0') &#123; ++ans; if(s[i-1]=='0') ans+=cn[w[i]]; &#125; cn[w[i-1]]++; &#125; printf("%lld\n",ans); return 0;&#125; Solve B：前缀和+剪枝 Solve C：动态规划]]></content>
+      <tags>
+        <tag>“前缀和”</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[开博点题]]></title>
+    <url>%2F2019%2F07%2F26%2F%E5%BC%80%E5%8D%9A%E7%82%B9%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[时间是一切财富中最宝贵的财富。 —— 德奥弗拉斯多 这只是一篇单纯的记录开博的文章，如果你点进来，可能会因为里面并没有写什么而感到失望 开博时间是2019.7.26，第一篇博文的发表是在2019.7.27，历史上的今天例如在公元1214年的今天发生了布汶战役，1789年的今天美国成立了国务院，1837年的今天意大利诗人卡尔杜齐出生，1890年的今天梵高开枪自杀等等。 但是今天，我的博客创立了。 虽然对整个世界来说这不是很大的事情，但是我希望几万年之后外星人发现了这一篇博文并且特意将这件事记录在小本本上供后世参考和学习。 言归正传，我还是要拿这一博客当正经的Code与经验交流来用，如有不当之处欢迎大家指正。]]></content>
+      <tags>
+        <tag>闲谈</tag>
+      </tags>
+  </entry>
 </search>
