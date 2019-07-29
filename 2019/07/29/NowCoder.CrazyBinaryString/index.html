@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="题目描述 链接：https://ac.nowcoder.com/acm/contest/884/K One day he got a string consisted of numbers. He wants to know how many substrings in the string are multiples of 300 when considered as decimal integ">
+<meta name="description" content="题目描述 链接：https://ac.nowcoder.com/acm/contest/883/B ZYB loves binary strings (strings that only contains 0 and1’). And he loves equal binary strings more, where the number of 0and the number of  1 in th">
 <meta name="keywords" content="“前缀和”">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NowCoder.Number">
-<meta property="og:url" content="http://yoursite.com/2019/07/28/NowCoder.Number/index.html">
+<meta property="og:title" content="NowCoder Crazy Binary String">
+<meta property="og:url" content="http://yoursite.com/2019/07/29/NowCoder.CrazyBinaryString/index.html">
 <meta property="og:site_name" content="FylSeA">
-<meta property="og:description" content="题目描述 链接：https://ac.nowcoder.com/acm/contest/884/K One day he got a string consisted of numbers. He wants to know how many substrings in the string are multiples of 300 when considered as decimal integ">
+<meta property="og:description" content="题目描述 链接：https://ac.nowcoder.com/acm/contest/883/B ZYB loves binary strings (strings that only contains 0 and1’). And he loves equal binary strings more, where the number of 0and the number of  1 in th">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-29T05:04:34.409Z">
+<meta property="og:updated_time" content="2019-07-29T11:19:10.030Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NowCoder.Number">
-<meta name="twitter:description" content="题目描述 链接：https://ac.nowcoder.com/acm/contest/884/K One day he got a string consisted of numbers. He wants to know how many substrings in the string are multiples of 300 when considered as decimal integ">
+<meta name="twitter:title" content="NowCoder Crazy Binary String">
+<meta name="twitter:description" content="题目描述 链接：https://ac.nowcoder.com/acm/contest/883/B ZYB loves binary strings (strings that only contains 0 and1’). And he loves equal binary strings more, where the number of 0and the number of  1 in th">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/07/28/NowCoder.Number/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/29/NowCoder.CrazyBinaryString/">
 
 
 
 
 
-  <title>NowCoder.Number | FylSeA</title>
+  <title>NowCoder Crazy Binary String | FylSeA</title>
   
 
 
@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/28/NowCoder.Number/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/29/NowCoder.CrazyBinaryString/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="FylSeA">
@@ -312,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">NowCoder.Number</h1>
+          <h1 class="post-title" itemprop="name headline">NowCoder Crazy Binary String</h1>
         
 
         <div class="post-meta">
@@ -324,8 +324,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-28T22:05:37+08:00">
-                2019-07-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-29T13:12:11+08:00">
+                2019-07-29
               </time>
             
 
@@ -363,43 +363,36 @@
 
       
         <p><strong>题目描述</strong></p>
-<p>链接：<a href="https://ac.nowcoder.com/acm/contest/884/K" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/884/K</a></p>
-<p>One day he got a string consisted of numbers. He wants to know how many substrings in the string are multiples of 300 when considered as decimal integers. </p>
-<p><strong>Note that leading and trailing zeros are allowed (both in original string and substrings you chose)</strong> and the same substring appearing in different places can be counted multiple times. </p>
+<p>链接：<a href="https://ac.nowcoder.com/acm/contest/883/B" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/883/B</a></p>
+<p>ZYB loves binary strings (strings that only contains <code>0</code> and<code>1</code>’). And he loves equal binary strings more, where the number of <code>0</code>and the number of  <code>1</code> in the string are equal.</p>
+<p> ZYB wants to choose a substring from an original string <code>T</code> so that it is an equal binary stringwith the longest length possible. He also wants to choose a subsequence of  <code>T</code> which meets the same requirements.</p>
+<p> A string  <code>v</code> is a substring of a string <code>w</code> if <code>v</code> is empty, or there are two integers <code>l</code> and <code>r</code> (1≤l≤r≤∣w∣) such that <code>v=wl*wl+1 ⋯wr</code> A string v is a subsequence of a string  <code>w</code>  if it can be derived from w by deleting any number (including zero) of characters without changing the order of the remaining characters. </p>
+<p> For simplicity, you only need to output the maximum possible length. Note that the empty string is both a substring and a subsequence of any string.</p>
 <a id="more"></a>
 
-<p><strong>输入描述：</strong></p>
-<p>A single line consisting a string consisted of characters ‘0’ to ‘9’.</p>
-<p><strong>输出描述：</strong></p>
-<p>The number of substrings that are multiples of 300 when considered as decimal integers.</p>
-<p><strong>样例输入：</strong></p>
+<p><strong>输入描述</strong></p>
 <blockquote>
-<p>600</p>
+<p>The first line of the input contains a single integer <code>N</code> (1≤<code>N</code>≤100000)，the length of the original string <code>T</code>. The second line contains a binary string with exactly <code>N</code> characters, the original string  <code>T</code></p>
 </blockquote>
-<p><strong>样例输出：</strong></p>
+<p><strong>输出描述</strong></p>
 <blockquote>
-<p>4</p>
+<p>Print two integers <code>A</code> and  <code>B</code>, denoting the answer for substring and subsequence respectively.</p>
 </blockquote>
-<p><strong>说明：</strong></p>
+<p><strong>示例输入</strong></p>
 <blockquote>
-<p>‘600’, ‘0’, ‘0’, ‘00’ are multiples of 300. (Note that ‘0’ are counted twice because it appeared two times)</p>
+<p>8</p>
+<p>0100101001</p>
 </blockquote>
-<p><strong>备注：</strong></p>
+<p><strong>示例输出</strong></p>
 <blockquote>
-<p>let the string in the input be s, 1≤∣s∣≤10^5 .</p>
+<p>4 6</p>
 </blockquote>
-<p><strong>问题分析：</strong></p>
-<p>因为n^2复杂度在10^5条件下肯定会T，所以排除朴素的求前缀和。</p>
-<p>想到二分去做，但是因为要保证子串的有序性，也不可以。</p>
-<p><em>Solve A： O(n)复杂度</em></p>
-<p>这里想到正序和逆序，人工筛选的办法肯定是从后向前筛选，例如333300会先筛选0、0、00、300、3300，33300，333300，在保证00的条件下3333筛了四遍，推广到前缀和的N^2复杂度是肯定不可行的，所以考虑正序——保存前 i 个数正确顺序的条件下，在求第 i + 1 项时直接引用第 i 项的数。</p>
-<p><strong>w[i]为前 i 项的和 mod 3的值，对于长度 &gt;=2 的区间 [l,r] 内 只要 w[ l - 1 ] = w[ r ] 且 w [ r - 1 ] , w [ r ]为 0 即满足</strong></p>
-<p>也就是说，当 s [i] = 0 时，ans+1，当 s [ i - 1 ] == s [ i ]时，ans+= （ i 之前有多少能满足的条件数目）其中 cn [x] 数组代表出现了多少次 mod3 = x的情况，即 i 时刻 cn [ 0 ] 为 i 之前有多少 <em>组</em>  满足能被300整除的组合数。</p>
-<p>你可能会问，为什么不直接写 ans += cn[0]？ 形如78900 w[i]为22222，也就是说不满足前面一串能形成300的倍数的条件时这一串是不被二次计算的。 </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxx 100005</span></span><br><span class="line"><span class="keyword">char</span> s[maxx]; <span class="keyword">int</span> n,w[maxx],cn[<span class="number">3</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%s"</span>,s+<span class="number">1</span>); n=<span class="built_in">strlen</span>(s+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">		w[i]=(w[i<span class="number">-1</span>]+s[i])%<span class="number">3</span>;</span><br><span class="line">    </span><br><span class="line">	ll ans=<span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(s[i]==<span class="string">'0'</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			++ans;</span><br><span class="line">			<span class="keyword">if</span>(s[i<span class="number">-1</span>]==<span class="string">'0'</span>)</span><br><span class="line">				ans+=cn[w[i]];</span><br><span class="line">		&#125;</span><br><span class="line">		cn[w[i<span class="number">-1</span>]]++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>分析这道题目的时候，10^5用N^2的时间复杂度跑一遍肯定会TLE，这时候考虑对前缀和的剪枝操作。</p>
+<p><em>Solve A：map</em></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;k;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x&gt;=y)&#123;</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">min</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x&gt;=y)&#123;</span><br><span class="line">        <span class="keyword">return</span> y;</span><br><span class="line">    &#125;<span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a=<span class="number">0</span>,b=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">int</span> maxn=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    k[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span> s;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">        <span class="keyword">if</span>(s==<span class="string">'1'</span>)&#123;</span><br><span class="line">            a++;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            b++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(k.find(a-b)==k.end())&#123; </span><br><span class="line">            k[a-b]=i;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            maxn=max(maxn,i-k[a-b]);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;maxn&lt;&lt;<span class="string">" "</span>&lt;&lt;min(a,b)*<span class="number">2</span>;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><em>Solve B：前缀和+剪枝</em></p>
-<p><em>Solve C：动态规划</em></p>
+<p><em>Solve B：二分</em></p>
+<p>既然只是单纯的找0和1相等的子串情况，二分法可能会更好用。</p>
 
       
     </div>
@@ -430,8 +423,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/26/开博点题/" rel="next" title="开博点题">
-                <i class="fa fa-chevron-left"></i> 开博点题
+              <a href="/2019/07/28/NowCoder.Number/" rel="next" title="NowCoder.Number">
+                <i class="fa fa-chevron-left"></i> NowCoder.Number
               </a>
             
           </div>
@@ -440,8 +433,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/29/NowCoder.CrazyBinaryString/" rel="prev" title="NowCoder Crazy Binary String">
-                NowCoder Crazy Binary String <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/29/test/" rel="prev" title="test">
+                test <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
