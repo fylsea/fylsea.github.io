@@ -489,34 +489,17 @@
 
       
         
-          
-            <p><strong>题目描述</strong></p>
+          <p><strong>题目描述</strong></p>
 <blockquote>
 <p>Mrs. Chambers always has her class line up in height order (shortest at the front of the line). Every September a new class of exactly 20 3rd graders arrive, all of different height. For the first few days it takes a long time to get the kids in height order, since no one knows where they should be in the line.<br>Needless to say, there is quite a bit of jockeying around. This year Mrs. Chambers decided to try a new method to minimize this ordering chaos. One student would be selected to be the first person in line. Then, another student is selected and would find the rst person in the line that is taller than him,and stand in front of that person, thereby causing all the students behind him to step back to make room. If there is no student that is taller, then he would stand at the end of the line. This process continues, one student at-a-time, until all the students are in line, at which point the students will be lined up in height order.<br>For this problem, you will write a program that calculates the total number of steps taken back during the ordering process for a given class of students.</p>
 </blockquote>
-<p><strong>输入</strong></p>
-<blockquote>
-<p>The first line of input contains a single integer P, (1 ≤ P ≤ 1000), which is the number of data sets that follow. Each data set should be processed identically and independently.<br>Each data set consists of a single line of input. It contains the data set number, K, followed by 20 non-negative unique integers separated by a single space. The 20 integers represent the height (in millimeters) of each student in the class.</p>
-</blockquote>
-<p><strong>输出</strong></p>
-<blockquote>
-<p>For each data set there is one line of output. The single output line consists of the data set number,K, followed by a single space followed by total number of steps taken back.</p>
-</blockquote>
-<p><strong>样例输入</strong></p>
-<blockquote>
-<p>4<br>1 900 901 902 903 904 905 906 907 908 909 910 911 912 913 914 915 916 917 918 919<br>2 919 918 917 916 915 914 913 912 911 910 909 908 907 906 905 904 903 902 901 900<br>3 901 902 903 904 905 906 907 908 909 910 911 912 913 914 915 916 917 918 919 900<br>4 918 917 916 915 914 913 912 911 910 909 908 907 906 905 904 903 902 901 900 919</p>
-</blockquote>
-<p><strong>样例输出</strong></p>
-<blockquote>
-<p>1 0<br>2 190<br>3 19<br>4 17</p>
-</blockquote>
-<p>弧了好久没更新博客..实际上是前几天去考科目二了（险过，丢人）</p>
-<p>这道题第一眼就感觉用upper_bound，就算数据水但是还有打的必要的</p>
-<p>upper_bound的作用就是寻找比较一个vector大数的位置并且返回，这里找一下然后算一下位置求和就好了</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; shu;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);    </span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> s=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> kk[<span class="number">25</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    	<span class="keyword">int</span> num;</span><br><span class="line">    	s=<span class="number">0</span>;</span><br><span class="line">    	shu.clear();</span><br><span class="line">       	 <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;num);;</span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=<span class="number">20</span>;j++)&#123;</span><br><span class="line">    		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;kk[j]);</span><br><span class="line">    		s+=shu.end()-upper_bound(shu.begin(),shu.end(),kk[j]);</span><br><span class="line">    		shu.insert(upper_bound(shu.begin(),shu.end(),kk[j]),kk[j]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>,i,s);</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/14/UVA Height Ordering/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
