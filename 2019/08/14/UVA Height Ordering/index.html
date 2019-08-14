@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="前缀和,">
+  <meta name="keywords" content="STL,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="题目描述 链接：https://ac.nowcoder.com/acm/contest/884/K One day he got a string consisted of numbers. He wants to know how many substrings in the string are multiples of 300 when considered as decimal integ">
-<meta name="keywords" content="前缀和">
+<meta name="description" content="题目描述  Mrs. Chambers always has her class line up in height order (shortest at the front of the line). Every September a new class of exactly 20 3rd graders arrive, all of different height. For the fir">
+<meta name="keywords" content="STL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NowCoder.Number">
-<meta property="og:url" content="http://yoursite.com/2019/07/28/NowCoder.Number/index.html">
+<meta property="og:title" content="UVA Height Ordering">
+<meta property="og:url" content="http://yoursite.com/2019/08/14/UVA Height Ordering/index.html">
 <meta property="og:site_name" content="FylSeA">
-<meta property="og:description" content="题目描述 链接：https://ac.nowcoder.com/acm/contest/884/K One day he got a string consisted of numbers. He wants to know how many substrings in the string are multiples of 300 when considered as decimal integ">
+<meta property="og:description" content="题目描述  Mrs. Chambers always has her class line up in height order (shortest at the front of the line). Every September a new class of exactly 20 3rd graders arrive, all of different height. For the fir">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-31T13:40:52.040Z">
+<meta property="og:updated_time" content="2019-08-14T02:37:22.241Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NowCoder.Number">
-<meta name="twitter:description" content="题目描述 链接：https://ac.nowcoder.com/acm/contest/884/K One day he got a string consisted of numbers. He wants to know how many substrings in the string are multiples of 300 when considered as decimal integ">
+<meta name="twitter:title" content="UVA Height Ordering">
+<meta name="twitter:description" content="题目描述  Mrs. Chambers always has her class line up in height order (shortest at the front of the line). Every September a new class of exactly 20 3rd graders arrive, all of different height. For the fir">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/07/28/NowCoder.Number/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/14/UVA Height Ordering/">
 
 
 
 
 
-  <title>NowCoder.Number | FylSeA</title>
+  <title>UVA Height Ordering | FylSeA</title>
   
 
 
@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/28/NowCoder.Number/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/14/UVA Height Ordering/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="FylSeA">
@@ -312,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">NowCoder.Number</h1>
+          <h1 class="post-title" itemprop="name headline">UVA Height Ordering</h1>
         
 
         <div class="post-meta">
@@ -324,8 +324,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-28T22:05:37+08:00">
-                2019-07-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-14T10:30:39+08:00">
+                2019-08-14
               </time>
             
 
@@ -363,43 +363,30 @@
 
       
         <p><strong>题目描述</strong></p>
-<p>链接：<a href="https://ac.nowcoder.com/acm/contest/884/K" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/884/K</a></p>
-<p>One day he got a string consisted of numbers. He wants to know how many substrings in the string are multiples of 300 when considered as decimal integers. </p>
-<p><strong>Note that leading and trailing zeros are allowed (both in original string and substrings you chose)</strong> and the same substring appearing in different places can be counted multiple times. </p>
-<a id="more"></a>
+<blockquote>
+<p>Mrs. Chambers always has her class line up in height order (shortest at the front of the line). Every September a new class of exactly 20 3rd graders arrive, all of different height. For the first few days it takes a long time to get the kids in height order, since no one knows where they should be in the line.<br>Needless to say, there is quite a bit of jockeying around. This year Mrs. Chambers decided to try a new method to minimize this ordering chaos. One student would be selected to be the first person in line. Then, another student is selected and would find the rst person in the line that is taller than him,and stand in front of that person, thereby causing all the students behind him to step back to make room. If there is no student that is taller, then he would stand at the end of the line. This process continues, one student at-a-time, until all the students are in line, at which point the students will be lined up in height order.<br>For this problem, you will write a program that calculates the total number of steps taken back during the ordering process for a given class of students.</p>
+</blockquote>
+<p><strong>输入</strong></p>
+<blockquote>
+<p>The first line of input contains a single integer P, (1 ≤ P ≤ 1000), which is the number of data sets that follow. Each data set should be processed identically and independently.<br>Each data set consists of a single line of input. It contains the data set number, K, followed by 20 non-negative unique integers separated by a single space. The 20 integers represent the height (in millimeters) of each student in the class.</p>
+</blockquote>
+<p><strong>输出</strong></p>
+<blockquote>
+<p>For each data set there is one line of output. The single output line consists of the data set number,K, followed by a single space followed by total number of steps taken back.</p>
+</blockquote>
+<p><strong>样例输入</strong></p>
+<blockquote>
+<p>4<br>1 900 901 902 903 904 905 906 907 908 909 910 911 912 913 914 915 916 917 918 919<br>2 919 918 917 916 915 914 913 912 911 910 909 908 907 906 905 904 903 902 901 900<br>3 901 902 903 904 905 906 907 908 909 910 911 912 913 914 915 916 917 918 919 900<br>4 918 917 916 915 914 913 912 911 910 909 908 907 906 905 904 903 902 901 900 919</p>
+</blockquote>
+<p><strong>样例输出</strong></p>
+<blockquote>
+<p>1 0<br>2 190<br>3 19<br>4 17</p>
+</blockquote>
+<p>弧了好久没更新博客..实际上是前几天去考科目二了（险过，丢人）</p>
+<p>这道题第一眼就感觉用upper_bound，就算数据水但是还有打的必要的</p>
+<p>upper_bound的作用就是寻找比较一个vector大数的位置并且返回，这里找一下然后算一下位置求和就好了</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; shu;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);    </span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> s=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> kk[<span class="number">25</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    	<span class="keyword">int</span> num;</span><br><span class="line">    	s=<span class="number">0</span>;</span><br><span class="line">    	shu.clear();</span><br><span class="line">       	 <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;num);;</span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=<span class="number">20</span>;j++)&#123;</span><br><span class="line">    		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;kk[j]);</span><br><span class="line">    		s+=shu.end()-upper_bound(shu.begin(),shu.end(),kk[j]);</span><br><span class="line">    		shu.insert(upper_bound(shu.begin(),shu.end(),kk[j]),kk[j]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>,i,s);</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><strong>输入描述：</strong></p>
-<p>A single line consisting a string consisted of characters ‘0’ to ‘9’.</p>
-<p><strong>输出描述：</strong></p>
-<p>The number of substrings that are multiples of 300 when considered as decimal integers.</p>
-<p><strong>样例输入：</strong></p>
-<blockquote>
-<p>600</p>
-</blockquote>
-<p><strong>样例输出：</strong></p>
-<blockquote>
-<p>4</p>
-</blockquote>
-<p><strong>说明：</strong></p>
-<blockquote>
-<p>‘600’, ‘0’, ‘0’, ‘00’ are multiples of 300. (Note that ‘0’ are counted twice because it appeared two times)</p>
-</blockquote>
-<p><strong>备注：</strong></p>
-<blockquote>
-<p>let the string in the input be s, 1≤∣s∣≤10^5 .</p>
-</blockquote>
-<p><strong>问题分析：</strong></p>
-<p>因为n^2复杂度在10^5条件下肯定会T，所以排除朴素的求前缀和。</p>
-<p>想到二分去做，但是因为要保证子串的有序性，也不可以。</p>
-<p><em>Solve A： O(n)复杂度</em></p>
-<p>这里想到正序和逆序，人工筛选的办法肯定是从后向前筛选，例如333300会先筛选0、0、00、300、3300，33300，333300，在保证00的条件下3333筛了四遍，推广到前缀和的N^2复杂度是肯定不可行的，所以考虑正序——保存前 i 个数正确顺序的条件下，在求第 i + 1 项时直接引用第 i 项的数。</p>
-<p><strong>w[i]为前 i 项的和 mod 3的值，对于长度 &gt;=2 的区间 [l,r] 内 只要 w[ l - 1 ] = w[ r ] 且 w [ r - 1 ] , w [ r ]为 0 即满足</strong></p>
-<p>也就是说，当 s [i] = 0 时，ans+1，当 s [ i - 1 ] == s [ i ]时，ans+= （ i 之前有多少能满足的条件数目）其中 cn [x] 数组代表出现了多少次 mod3 = x的情况，即 i 时刻 cn [ 0 ] 为 i 之前有多少 <em>组</em>  满足能被300整除的组合数。</p>
-<p>你可能会问，为什么不直接写 ans += cn[0]？ 形如78900 w[i]为22222，也就是说不满足前面一串能形成300的倍数的条件时这一串是不被二次计算的。 </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxx 100005</span></span><br><span class="line"><span class="keyword">char</span> s[maxx]; <span class="keyword">int</span> n,w[maxx],cn[<span class="number">3</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%s"</span>,s+<span class="number">1</span>); n=<span class="built_in">strlen</span>(s+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">		w[i]=(w[i<span class="number">-1</span>]+s[i])%<span class="number">3</span>;</span><br><span class="line">    </span><br><span class="line">	ll ans=<span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(s[i]==<span class="string">'0'</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			++ans;</span><br><span class="line">			<span class="keyword">if</span>(s[i<span class="number">-1</span>]==<span class="string">'0'</span>)</span><br><span class="line">				ans+=cn[w[i]];</span><br><span class="line">		&#125;</span><br><span class="line">		cn[w[i<span class="number">-1</span>]]++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><em>Solve B：前缀和+剪枝</em></p>
-<p><em>Solve C：动态规划</em></p>
 
       
     </div>
@@ -417,7 +404,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/前缀和/" rel="tag"># 前缀和</a>
+            <a href="/tags/STL/" rel="tag"># STL</a>
           
         </div>
       
@@ -430,8 +417,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/26/开博点题/" rel="next" title="开博点题">
-                <i class="fa fa-chevron-left"></i> 开博点题
+              <a href="/2019/07/29/Atcoder.JOIOJI/" rel="next" title="Atcoder.JOIOJI">
+                <i class="fa fa-chevron-left"></i> Atcoder.JOIOJI
               </a>
             
           </div>
@@ -439,10 +426,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/29/NowCoder.CrazyBinaryString/" rel="prev" title="NowCoder Crazy Binary String">
-                NowCoder Crazy Binary String <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
