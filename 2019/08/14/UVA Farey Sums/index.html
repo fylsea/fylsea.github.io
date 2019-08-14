@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="数论,">
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="FylSeA">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+<meta name="description" content="题目描述  Given a positive integer, N, the sequence of all fractions a/b with (0 &amp;lt; a ≤ b), (1 &amp;lt; b ≤ N) and a and b relatively prime, listed in increasing order, is called the Farey Sequence of order">
+<meta name="keywords" content="数论">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UVA Farey Sums">
+<meta property="og:url" content="http://yoursite.com/2019/08/14/UVA Farey Sums/index.html">
 <meta property="og:site_name" content="FylSeA">
+<meta property="og:description" content="题目描述  Given a positive integer, N, the sequence of all fractions a/b with (0 &amp;lt; a ≤ b), (1 &amp;lt; b ≤ N) and a and b relatively prime, listed in increasing order, is called the Farey Sequence of order">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-08-14T07:15:11.382Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FylSeA">
+<meta name="twitter:title" content="UVA Farey Sums">
+<meta name="twitter:description" content="题目描述  Given a positive integer, N, the sequence of all fractions a/b with (0 &amp;lt; a ≤ b), (1 &amp;lt; b ≤ N) and a and b relatively prime, listed in increasing order, is called the Farey Sequence of order">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2019/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/14/UVA Farey Sums/">
 
 
 
 
 
-  <title>归档 | FylSeA</title>
+  <title>UVA Farey Sums | FylSeA</title>
   
 
 
@@ -140,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-right page-archive">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -276,247 +281,177 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/14/UVA Farey Sums/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FylSeA">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FylSeA">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">UVA Farey Sums</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-14T14:40:23+08:00">
+                2019-08-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 6 篇日志。 继续努力。
-      </span>
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
+            
+          
 
-        
+          
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/08/14/UVA Farey Sums/" itemprop="url">
-              
-                <span itemprop="name">UVA Farey Sums</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-14T14:40:23+08:00" content="2019-08-14">
-          08-14
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+        </div>
+      </header>
+    
 
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>题目描述</strong></p>
+<blockquote>
+<p>Given a positive integer, N, the sequence of all fractions a/b with (0 &lt; a ≤ b), (1 &lt; b ≤ N) and a and b relatively prime, listed in increasing order, is called the Farey Sequence of order N.<br>For example, the Farey Sequence of order 6 is:</p>
+<p>*<em>0/1, 1/6, 1/5, 1/4, 1/3, 2/5, 1/2, 3/5, 2/3, 3/4, 4/5, 5/6, 1/1 *</em></p>
+<p>If the denominators of the Farey Sequence of order N are: b[1], b[2], . . . , b[K]</p>
+<p>then the Farey Sum of order N is the sum of b[i]/b[i + 1] from i = 1 to K—1.<br>For example, the Farey Sum of order 6 is:</p>
+<p>*<em>1/6 + 6/5 + 5/4 + 4/3 + 3/5 + 5/2 + 2/5 + 5/3 + 3/4 + 4/5 + 5/6 + 6/1 = 35/2 *</em></p>
+<p>Write a program to compute the Farey Sum of order N (input).</p>
+</blockquote>
+<p><strong>输入</strong></p>
+<blockquote>
+<p>The first line of input contains a single integer P, (1 ≤ P ≤ 10000), which is the number of data sets that follow. Each data set should be processed identically and independently.<br>Each data set consists of a single line of input. It contains the data set number, K, followed by the order N, (2 ≤ N ≤ 10000), of the Farey Sum that is to be computed.</p>
+</blockquote>
+<p><strong>输出</strong></p>
+<blockquote>
+<p>For each data set there is a single line of output. The single output line consists of the data set number,K, followed by a single space followed by the Farey Sum as a decimal fraction in lowest terms. If the denominator is 1, print only the numerator.</p>
+</blockquote>
+<p><strong>样例输入</strong></p>
+<blockquote>
+<p>4<br>1 6<br>2 15<br>3 57<br>4 9999</p>
+</blockquote>
+<p><strong>样例输出</strong></p>
+<blockquote>
+<p>1 35/2<br>2 215/2<br>3 2999/2<br>4 91180457/2</p>
+</blockquote>
+<p>这一道题用模拟会T掉</p>
+<p>正解是运用欧拉函数。</p>
+<p><strong>欧拉函数</strong>是用来计算N前有多少与N互质的数的方法。</p>
+<p>想学习欧拉函数的可以看这里：<a href https: www.e-learn.cn content qita 2190529"">https://www.e-learn.cn/content/qita/2190529</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf=<span class="number">10003</span>;</span><br><span class="line"><span class="keyword">int</span> jj[inf];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">euler</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=inf;i++)</span><br><span class="line">        jj[i]=i;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;inf;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(jj[i]==i)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=i;j&lt;inf;j+=i)&#123;</span><br><span class="line">                jj[j]=jj[j]/i*(i<span class="number">-1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        jj[i]+=jj[i<span class="number">-1</span>];<span class="comment">//</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,k,x,a[<span class="number">10010</span>];</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    euler();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">15</span>;i++)&#123;</span><br><span class="line">    	<span class="built_in">cout</span>&lt;&lt;jj[i]&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">while</span>(n--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;k,&amp;x);</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;k&lt;&lt;<span class="string">" "</span>&lt;&lt;jj[x]*<span class="number">3</span><span class="number">-1</span>&lt;&lt;<span class="string">"/2"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/08/14/UVA Height Ordering/" itemprop="url">
-              
-                <span itemprop="name">UVA Height Ordering</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-14T10:30:39+08:00" content="2019-08-14">
-          08-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/07/29/Atcoder.JOIOJI/" itemprop="url">
-              
-                <span itemprop="name">Atcoder.JOIOJI</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-29T19:16:18+08:00" content="2019-07-29">
-          07-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/07/29/NowCoder.CrazyBinaryString/" itemprop="url">
-              
-                <span itemprop="name">NowCoder Crazy Binary String</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-29T13:12:11+08:00" content="2019-07-29">
-          07-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/07/28/NowCoder.Number/" itemprop="url">
-              
-                <span itemprop="name">NowCoder.Number</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-28T22:05:37+08:00" content="2019-07-28">
-          07-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/07/26/开博点题/" itemprop="url">
-              
-                <span itemprop="name">开博点题</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-26T20:37:26+08:00" content="2019-07-26">
-          07-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数论/" rel="tag"># 数论</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/14/UVA Height Ordering/" rel="next" title="UVA Height Ordering">
+                <i class="fa fa-chevron-left"></i> UVA Height Ordering
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -524,6 +459,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -745,6 +684,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
