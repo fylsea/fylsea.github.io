@@ -489,8 +489,7 @@
 
       
         
-          
-            <p><strong>题目描述</strong></p>
+          <p><strong>题目描述</strong></p>
 <blockquote>
 <p>Given a positive integer, N, the sequence of all fractions a/b with (0 &lt; a ≤ b), (1 &lt; b ≤ N) and a and b relatively prime, listed in increasing order, is called the Farey Sequence of order N.<br>For example, the Farey Sequence of order 6 is:</p>
 <p>*<em>0/1, 1/6, 1/5, 1/4, 1/3, 2/5, 1/2, 3/5, 2/3, 3/4, 4/5, 5/6, 1/1 *</em></p>
@@ -499,30 +498,13 @@
 <p>*<em>1/6 + 6/5 + 5/4 + 4/3 + 3/5 + 5/2 + 2/5 + 5/3 + 3/4 + 4/5 + 5/6 + 6/1 = 35/2 *</em></p>
 <p>Write a program to compute the Farey Sum of order N (input).</p>
 </blockquote>
-<p><strong>输入</strong></p>
-<blockquote>
-<p>The first line of input contains a single integer P, (1 ≤ P ≤ 10000), which is the number of data sets that follow. Each data set should be processed identically and independently.<br>Each data set consists of a single line of input. It contains the data set number, K, followed by the order N, (2 ≤ N ≤ 10000), of the Farey Sum that is to be computed.</p>
-</blockquote>
-<p><strong>输出</strong></p>
-<blockquote>
-<p>For each data set there is a single line of output. The single output line consists of the data set number,K, followed by a single space followed by the Farey Sum as a decimal fraction in lowest terms. If the denominator is 1, print only the numerator.</p>
-</blockquote>
-<p><strong>样例输入</strong></p>
-<blockquote>
-<p>4<br>1 6<br>2 15<br>3 57<br>4 9999</p>
-</blockquote>
-<p><strong>样例输出</strong></p>
-<blockquote>
-<p>1 35/2<br>2 215/2<br>3 2999/2<br>4 91180457/2</p>
-</blockquote>
-<p>这一道题用模拟会T掉</p>
-<p>正解是运用欧拉函数。</p>
-<p><strong>欧拉函数</strong>是用来计算N前有多少与N互质的数的方法。</p>
-<p>想学习欧拉函数的可以看这里：<a href https: www.e-learn.cn content qita 2190529"">https://www.e-learn.cn/content/qita/2190529</a></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf=<span class="number">10003</span>;</span><br><span class="line"><span class="keyword">int</span> jj[inf];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">euler</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=inf;i++)</span><br><span class="line">        jj[i]=i;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;inf;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(jj[i]==i)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=i;j&lt;inf;j+=i)&#123;</span><br><span class="line">                jj[j]=jj[j]/i*(i<span class="number">-1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        jj[i]+=jj[i<span class="number">-1</span>];<span class="comment">//</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,k,x,a[<span class="number">10010</span>];</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    euler();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">15</span>;i++)&#123;</span><br><span class="line">    	<span class="built_in">cout</span>&lt;&lt;jj[i]&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">while</span>(n--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;k,&amp;x);</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;k&lt;&lt;<span class="string">" "</span>&lt;&lt;jj[x]*<span class="number">3</span><span class="number">-1</span>&lt;&lt;<span class="string">"/2"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/14/UVA Farey Sums/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
