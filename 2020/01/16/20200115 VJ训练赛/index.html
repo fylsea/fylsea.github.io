@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="测试一下好不好用 题目描述">
+<meta name="description" content="测试一下好不好用  愉快的Virtual Judge假期训练赛第一场题解报告">
 <meta name="keywords" content="“训练赛”">
 <meta property="og:type" content="article">
-<meta property="og:title" content="20200115">
-<meta property="og:url" content="http://yoursite.com/2020/01/16/20200115/index.html">
+<meta property="og:title" content="20200115 VJ训练赛">
+<meta property="og:url" content="http://yoursite.com/2020/01/16/20200115 VJ训练赛/index.html">
 <meta property="og:site_name" content="FylSeA">
-<meta property="og:description" content="测试一下好不好用 题目描述">
+<meta property="og:description" content="测试一下好不好用  愉快的Virtual Judge假期训练赛第一场题解报告">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-16T01:46:50.220Z">
+<meta property="og:image" content="https://images.cnblogs.com/cnblogs_com/Fylsea/1335321/o_2001160157376a6c92d8b177095f2e82d9d7abbbca7d.jpg">
+<meta property="og:updated_time" content="2020-01-16T03:07:18.353Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="20200115">
-<meta name="twitter:description" content="测试一下好不好用 题目描述">
+<meta name="twitter:title" content="20200115 VJ训练赛">
+<meta name="twitter:description" content="测试一下好不好用  愉快的Virtual Judge假期训练赛第一场题解报告">
+<meta name="twitter:image" content="https://images.cnblogs.com/cnblogs_com/Fylsea/1335321/o_2001160157376a6c92d8b177095f2e82d9d7abbbca7d.jpg">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/01/16/20200115/">
+  <link rel="canonical" href="http://yoursite.com/2020/01/16/20200115 VJ训练赛/">
 
 
 
 
 
-  <title>20200115 | FylSeA</title>
+  <title>20200115 VJ训练赛 | FylSeA</title>
   
 
 
@@ -295,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/16/20200115/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/16/20200115 VJ训练赛/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="FylSeA">
@@ -312,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">20200115</h1>
+          <h1 class="post-title" itemprop="name headline">20200115 VJ训练赛</h1>
         
 
         <div class="post-meta">
@@ -363,7 +365,33 @@
 
       
         <p>测试一下好不好用</p>
+<p><img src="https://images.cnblogs.com/cnblogs_com/Fylsea/1335321/o_2001160157376a6c92d8b177095f2e82d9d7abbbca7d.jpg" alt="FylSeA"></p>
+<p>愉快的Virtual Judge假期训练赛第一场题解报告</p>
+<a id="more"></a>
+
+<p>重新复盘一下QAQ</p>
+<p><strong>A. Mezo Playing Zoma</strong></p>
 <p><strong>题目描述</strong></p>
+<p>给你一串字符串只包含L和R，从0位置开始可以向左向右走也可以不走，问你最多能到达多少个位置。</p>
+<p><strong>题目解读</strong></p>
+<p>如果给字符串是“L L L”，那么可以选择每一步走或者不走就是-3 -2 -1 0 共4种</p>
+<p>如果给字符串是“R R R”，同理 0 1 2 3 共4种</p>
+<p>如果给字符串是“R L R”，有-1 0 1 2 共4种</p>
+<p>…所以这道题也就是判断LR的数量单独加和最后+1</p>
+<p><strong>B. Just Eat It!</strong></p>
+<p><strong>题目描述</strong></p>
+<p>给你一个数组，数组和为A，一串连续最大字串和为B，问A&gt;=B即输出YES，否则输出NO</p>
+<p><strong>题目解读</strong></p>
+<p>问题就是求解 数组内连续子段最大和 是多少</p>
+<p>首先看看情况都会有哪几种：</p>
+<p>第一种：1 2 3 4 5，连续子段最大和为2+3+4+5</p>
+<p>第二种：1 2 3 4 -1，连续子段最大和为1+2+3+4</p>
+<p>第三种：1 2 3 -1 5，连续子段最大和为2+3+(-1)+5</p>
+<p>第四种：1 1 -2 3 4，连续最大子段和为3+4</p>
+<p>可以看出，如果要寻找[1,n-1]和[2,n]范围内的最大子段和，需要判断x位置之前的和是否小于0，如果小于0那么就要从x+1位置重新开始，两个范围都跑一遍就好了。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">max</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> a,<span class="keyword">long</span> <span class="keyword">long</span> b)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(a&lt;b)<span class="keyword">return</span> b;	</span><br><span class="line">	<span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t,n,a[<span class="number">100005</span>];</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">	<span class="keyword">while</span>(t--)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">		<span class="keyword">long</span> <span class="keyword">long</span> k=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">			k+=a[i];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">long</span> <span class="keyword">long</span> x=<span class="number">0</span>,maxx=<span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n<span class="number">-1</span>;i++)&#123;</span><br><span class="line">			x+=a[i];</span><br><span class="line">			<span class="keyword">if</span>(x&lt;<span class="number">0</span>) x=<span class="number">0</span>;</span><br><span class="line">			maxx=max(maxx,x);</span><br><span class="line">		&#125;</span><br><span class="line">		x=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">			x+=a[i];</span><br><span class="line">			<span class="keyword">if</span>(x&lt;<span class="number">0</span>) x=<span class="number">0</span>;</span><br><span class="line">			maxx=max(maxx,x);	</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(maxx&lt;k) <span class="built_in">printf</span>(<span class="string">"YES\n"</span>);</span><br><span class="line">		<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"NO\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>干活去，先写到这</p>
 
       
     </div>
